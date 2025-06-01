@@ -1,0 +1,9 @@
+.idea/
+data/
+api/.env
+api/node_modules
+embeddings/bin
+embeddings/include
+embeddings/lib
+embeddings/share
+

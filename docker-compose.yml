@@ -1,0 +1,44 @@
+services:
+
+  embeddings:
+    container_name: recommender_spike_embeddings
+    build:
+      context: ./embeddings
+      dockerfile: Dockerfile.development
+    ports:
+      - "7373:7373"
+    networks:
+      - my-network
+
+  api:
+    container_name: recommender_spike_api
+    build:
+      context: ./api
+      dockerfile: Dockerfile.development
+    command: npm run start
+    volumes:
+      - ./api/:/app
+    ports:
+      - "8383:8383"
+    depends_on:
+      - db
+    networks:
+      - my-network
+
+  db:
+    image: ankane/pgvector
+    container_name: recommender_spike_db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: recommender_spike
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
