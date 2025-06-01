@@ -12,7 +12,7 @@ CREATE TABLE products
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    rating DECIMAL(2) NOT NULL
+    rating DECIMAL(4,2) NOT NULL
 );
 
 CREATE TABLE orders (

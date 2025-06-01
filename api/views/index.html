@@ -1,5 +1,27 @@
 <main>
-    <div class="row">
-        <p>Sub noctis umbra, silva vetus clamabat. Lux lunae, pallida et tremula, per folia cadens, revelabat imagines absconditas. Spiritus antiqui, murmurantes in vento, narrabant fabulas de gloria perdita et potentia oblivionis. Memoria lapidum, silentium aeternum, testabantur transitum temporum, et cantus avium, tristis et flebilis, resonabat per vallis profunda.</p>
+    <div class="column recommendation-example">
+        <div class="column preferences">
+            <h2>User's Preferences</h2>
+            <form>
+                ${products.map((product) => (`
+                <label>${product.name}
+                <input type="checkbox" value="${product.id}" name="products[]" />
+                </label>
+                `)).join("")}
+            </form>
+        </div>
+        <div class="column results">
+            <h2>User's Recommendations</h2>
+            <div class="row products">
+<!--                ${products.map((product) => (`-->
+<!--                <div class="column product-card">-->
+<!--                    <h2>${product.name}</h2>-->
+<!--                    <p>${product.description}</p>-->
+<!--                    <p class="rating">${product.rating}</p>-->
+<!--                </div>-->
+<!--                `)).join("")}-->
+            </div>
+        </div>
     </div>
 </main>
+<script src="/js/recommendation.js"></script>

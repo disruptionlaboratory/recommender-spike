@@ -51,7 +51,7 @@ app.get("/api/ping", (req, res) => {
 
 
 app.get("/api/products", async (req, res) => {
-    res.status(200);
+    // res.status(200);
     try {
         const products = await db.products.findAll({});
         res.json(products);
@@ -154,19 +154,114 @@ app.get("/api/products/recommendation", async (req, res) => {
     }
 })
 
+app.post("/api/products/recommendation", async (req, res) => {
+    try {
+        const { products: productIds } = req.body;
+
+        if (productIds.length === 0) {
+            res.json([])
+            return;
+        }
+
+        const productsLiked = await db.products.findAll({
+            where: {
+                id: {
+                    [Op.in]: productIds
+                }
+            },
+            include: [
+                {
+                    model: db.embeddings,
+                    as: "Embedding"
+                }
+            ]
+        })
+
+
+        const embeddings = []
+        productsLiked.forEach((p) => {
+            embeddings.push(JSON.parse(p.Embedding.embedding));
+        })
+
+        const embedding = getAverageEmbedding(embeddings);
+
+        const threshold = 0.1;
+        const limit = 100;
+
+        const results = await db.sequelize.query(
+            `SELECT id, products_id, description,
+              1 - (embedding <=> ARRAY[${embedding.join(", ")}]::vector(768)) AS similarity
+       FROM embeddings
+       WHERE (1 - (embedding <=> ARRAY[${embedding.join(", ")}]::vector(768))) > ${threshold}
+       ORDER BY similarity DESC
+         LIMIT ${limit}`
+        );
+
+        const matches = results[0];
+
+        const productIdsAndSimilarity = matches.map((m) => {
+            return {
+                id: m.products_id,
+                similarity: m.similarity
+            }})
+        //     .filter((p) => {
+        //     return p.id !== order.OrderItems[0].Product.id
+        // })
+
+        const products = await db.products.findAll({
+            where: {
+                id: {
+                    [Op.in]: productIdsAndSimilarity.map((i) => (i.id))
+                }
+            }
+        })
+
+        const recommendations = productIdsAndSimilarity.map((p) => {
+            const product = products.find((i) => (i.id === p.id))
+            return {
+                product,
+                similarity: p.similarity
+            }
+        }).sort((a, b) => {
+            if (a.similarity > b.similarity) {
+                return -1
+            } else if (b.similarity > a.similarity) {
+                return 1
+            }
+            return 0;
+        })
+
+        res.json(recommendations);
+
+    } catch (e) {
+        res.status(500);
+        res.json(e);
+    }
+})
+
 app.get("/", async (req, res) => {
     try {
+        const products = await db.products.findAll({
+            include: [
+                {
+                    model: db.embeddings,
+                    as: 'Embedding'
+                }
+            ]
+        });
         res.render("template", {
             locals: {
                 title: "",
+                products
             },
             partials: {
                 partial: "/index",
             },
         });
-    } catch (e) {
-        console.log(e);
-    }
+        } catch (e) {
+            console.log(e)
+            res.json(e);
+        }
 });
 
 app.use(express.static("public", { etag: false, lastModified: false }));
