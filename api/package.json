@@ -6,7 +6,7 @@
     "start": "nodemon -w ./ ./server.js",
     "drop-db": "export PGPASSWORD='password'; psql -U root -h recommender_spike_db -d postgres -c \"DROP DATABASE recommender_spike WITH (FORCE);\" && exit 0",
     "create-db": "export PGPASSWORD='password'; psql -U root -h recommender_spike_db -d postgres -c \"CREATE DATABASE recommender_spike;\"  && exit 0",
-    "apply-schema-and-data-and-changes": "export PGPASSWORD='password'; psql -U root -h recommender_spike_db -d recommender_spike -f db/001.schema.sql -f db/002.adding-products.sql -f db/003.adding-embeddings.sql -f db/004.adding-users.sql -f db/005.adding-orders.sql && exit 0",
+    "apply-schema-and-data-and-changes": "export PGPASSWORD='password'; psql -U root -h recommender_spike_db -d recommender_spike -f db/001.schema.sql -f db/002.adding-products.sql -f db/003.adding-embeddings.sql -f db/004.adding-users.sql -f db/005.adding-orders.sql -f db/006.adding-products.sql -f db/007.adding-embeddings.sql && exit 0",
     "rebuild-db": "npm run drop-db && npm run create-db && npm run apply-schema-and-data-and-changes"
   },
   "author": "",

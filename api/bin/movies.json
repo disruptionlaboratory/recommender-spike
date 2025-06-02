@@ -1,0 +1,153 @@
+[
+  {
+    "title": "Blade Runner",
+    "description": "A classic sci-fi movie set in a dystopian future where synthetic beings are hunted by special police officers",
+    "rating": 8.5
+  },
+  {
+    "title": "The Matrix",
+    "description": "A groundbreaking film that explores the idea of a simulated reality created by intelligent machines",
+    "rating": 8.7
+  },
+  {
+    "title": "Star Wars: Episode IV - A New Hope",
+    "description": "A space opera that follows a group of rebels as they battle against an evil empire in a galaxy far, far away",
+    "rating": 8.6
+  },
+  {
+    "title": "Alien",
+    "description": "A horror-sci-fi film about a crew of space explorers who are stalked and killed by a deadly extraterrestrial creature",
+    "rating": 8.4
+  },
+  {
+    "title": "E.T. the Extra-Terrestrial",
+    "description": "A heartwarming story about a young boy who befriends an alien stranded on Earth",
+    "rating": 8.4
+  },
+  {
+    "title": "Back to the Future",
+    "description": "A time-travel adventure film that follows a high school student as he travels back in time to the 1950s",
+    "rating": 8.7
+  },
+  {
+    "title": "The Terminator",
+    "description": "A cyborg is sent back in time to kill the future leader of the human resistance, and a soldier is sent to protect her",
+    "rating": 8.1
+  },
+  {
+    "title": "Minority Report",
+    "description": "A futuristic thriller set in a world where crimes can be predicted and prevented by special police officers known as 'Pre-Crime'",
+    "rating": 7.9
+  },
+  {
+    "title": "District 9",
+    "description": "A thought-provoking film that explores the themes of xenophobia and segregation through the lens of an alien invasion",
+    "rating": 8.1
+  },
+  {
+    "title": "Arrival",
+    "description": "A linguist is recruited by the military to communicate with aliens who have landed on Earth, and she must uncover their true intentions",
+    "rating": 7.9
+  },
+
+  {
+    "title": "When Harry Met Sally",
+    "description": "Two friends try to keep their relationship platonic, but romance gets in the way.",
+    "rating": 7.6
+  },
+  {
+    "title": "The Proposal",
+    "description": "A demanding boss forces her assistant to pretend to be her fiancé, but real feelings develop.",
+    "rating": 6.8
+  },
+  {
+    "title": "Crazy, Stupid, Love.",
+    "description": "A man is recently divorced and learns how to navigate the dating world with the help of a smooth-talking bachelor.",
+    "rating": 7.5
+  },
+  {
+    "title": "10 Things I Hate About You",
+    "description": "A modern retelling of Shakespeare's The Taming of the Shrew set in a high school, where two students fall in love despite their initial dislike for each other.",
+    "rating": 7.3
+  },
+  {
+    "title": "Sleepless in Seattle",
+    "description": "A widower's son calls in to a radio talk show in an attempt to find his father a new partner, leading to a cross-country romance.",
+    "rating": 7.1
+  },
+  {
+    "title": "Love Actually",
+    "description": "The interconnected love lives of multiple couples in the weeks leading up to Christmas.",
+    "rating": 7.7
+  },
+  {
+    "title": "My Best Friend's Wedding",
+    "description": "A woman realizes she is in love with her best friend, just as he is about to get married.",
+    "rating": 6.9
+  },
+  {
+    "title": "Notting Hill",
+    "description": "The romance between a humble bookstore owner and a famous movie star.",
+    "rating": 7.1
+  },
+  {
+    "title": "Runaway Bride",
+    "description": "A woman has a habit of leaving her fiances at the altar, until she meets her match.",
+    "rating": 6.2
+  },
+  {
+    "title": "You've Got Mail",
+    "description": "Two business rivals unknowingly fall in love with each other online.",
+    "rating": 7.0
+  },
+  {
+    "title": "Saving Private Ryan",
+    "description": "During WWII, a team of soldiers must find and rescue a paratrooper whose brothers have all been killed in action.",
+    "rating": 8.6
+  },
+  {
+    "title": "Platoon",
+    "description": "A young soldier faces a moral crisis during the Vietnam War, as he is torn between his loyalty to his fellow soldiers and his horror at their brutal actions.",
+    "rating": 8.1
+  },
+  {
+    "title": "Full Metal Jacket",
+    "description": "A group of Marine recruits undergo rigorous training under a demanding drill instructor, before being sent to fight in Vietnam.",
+    "rating": 8.3
+  },
+  {
+    "title": "Schindler's List",
+    "description": "During WWII, a German businessman saves the lives of thousands of Jews by employing them in his factory, while facing opposition from Nazi officials.",
+    "rating": 9.0
+  },
+  {
+    "title": "Apocalypse Now",
+    "description": "An American officer is sent on a secret mission to assassinate a renegade colonel during the Vietnam War, and descends into madness in the process.",
+    "rating": 8.5
+  },
+  {
+    "title": "The Bridge on the River Kwai",
+    "description": "British prisoners of war are forced to build a bridge for their Japanese captors, while their commander becomes obsessed with completing the task.",
+    "rating": 8.1
+  },
+  {
+    "title": "Glory",
+    "description": "The first all-black regiment in the US Army fights bravely during the Civil War, despite facing prejudice and hostility from their own side.",
+    "rating": 7.9
+  },
+  {
+    "title": "Letters from Iwo Jima",
+    "description": "Japanese soldiers defend their island against a US invasion during WWII, as seen through the eyes of a young soldier.",
+    "rating": 8.0
+  },
+  {
+    "title": "The Thin Red Line",
+    "description": "A group of American soldiers face psychological and physical challenges as they fight to capture a strategic island during WWII.",
+    "rating": 7.6
+  },
+  {
+    "title": "Dunkirk",
+    "description": "Allied soldiers are evacuated from the beaches of Dunkirk during WWII, as they face intense bombardment and attack from German forces.",
+    "rating": 8.1
+  }
+]
